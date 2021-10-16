@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@snowpack/app-template-react": "^2.1.2"
+  }
+}

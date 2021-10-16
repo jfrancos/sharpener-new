@@ -1,0 +1,12 @@
+[dev]
+framework = "#custom"
+#autoLaunch = false
+
+[build]
+functions = "functions"
+publish = "build"
+
+[[redirects]]
+from = "/api/*"
+status = 200
+to = "/.netlify/functions/:splat"
