@@ -4,6 +4,7 @@ import { HiPlus, HiX, HiPencil, HiCheck } from 'react-icons/hi';
 import { useKey, useOutsideClickRef } from 'rooks'; // react-recipes looks great too
 import { UserMetadata } from './Auth';
 import Landing from './Landing';
+import Suoli from './Suoli';
 
 const [
   listScreen,
@@ -27,10 +28,15 @@ const Controller = () => {
   const user = useContext(UserMetadata);
   const [collection, tasks] = useCollection('documents');
   const [screen, setScreen] = useState(landingScreen);
-
-
-
-  return screen === landingScreen && <Landing onLogin={() => setScreen(signinScreen)} />;
+  console.log(screen)
+  return (
+    <div className="bg-white text-gray-900 cursor-default .block .h-full">
+      {screen === landingScreen && (
+        <Landing onLogin={() => setScreen(signinScreen)} />
+      )}
+      {screen === signinScreen && <Suoli />}
+    </div>
+  );
 };
 
 export default Controller;
