@@ -3,7 +3,7 @@ import logo from './logo.png';
 
 const Landing = ({ onLogin: handleLogin }) => {
   return (
-    <div className="bg-white  text-gray-900 .block .space-y-12 .flex .flex-col cursor-default">
+    <div className="bg-white text-gray-900 .block .space-y-12 .flex .flex-col cursor-default">
       <div className="bg-gray-100 max-w-screen-sm flex-col space-y-12 mx-auto">
         <div className="space-y-6 flex-col">
           <div className="py-6 bg-gray-400 justify-between px-8 items-center">
@@ -34,7 +34,7 @@ const Landing = ({ onLogin: handleLogin }) => {
             </span>{' '}
             — the way you’ll hear them when you’re jamming or transcribing.{' '}
             <span className="font-semibold text-gray-900">
-              Try out a few sample lessons:
+              Try a few sample lessons:
             </span>
           </p>
           <Button>Beginner</Button>
@@ -60,7 +60,7 @@ const Landing = ({ onLogin: handleLogin }) => {
             Pricing
           </div>
 
-          <div className="px-8 .mt-6 flex-col items-start space-y-2">
+          <div className="px-8 flex-col items-start space-y-2">
             <h2 className="py-1 px-3 bg-gray-300 rounded font-medium">$0</h2>
             <p className="">
               Get a thorough ear training foundation for free. 50+ exercises
