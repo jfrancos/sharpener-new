@@ -8,11 +8,8 @@ const Landing = ({ onLogin: handleLogin }) => {
         <div className="space-y-6 flex-col">
           <div className="py-6 bg-gray-400 justify-between px-8 items-center">
             <div className="text-xl font-bold">Ear Sharpener</div>
-            <div className="group p-3 -m-3">
-              <div
-                className="group-hover:bg-gray-700 group-hover:text-gray-300 uppercase flex-col bg-gray-50 rounded-lg items-center px-7 py-1.5 font-semibold text-xs tracking-tight"
-                onClick={handleLogin}
-              >
+            <div className="group p-3 -m-3" onClick={handleLogin}>
+              <div className="group-hover:bg-gray-700 group-hover:text-gray-300 uppercase flex-col bg-gray-50 rounded-lg items-center px-7 py-1.5 font-semibold text-xs tracking-tight">
                 <p>Sign up</p>
                 <div className="my-0.5 h-0.5 bg-gray-300 self-stretch" />
                 <div>Log in</div>
@@ -42,10 +39,15 @@ const Landing = ({ onLogin: handleLogin }) => {
           </p>
           <Button>Beginner</Button>
           <div>
-            <p className="mx-16 text-xs -my-4">
-              <span className="underline">Sign up</span> to access 50+ curated
-              levels that gradually take you from “Beginner” to “Intermediate”
-              (for free!)
+            <p className="mx-16 text-xs -my-4 pointer-events-none">
+              <span
+                className="pointer-events-auto underline p-6 -m-6 pt-2 -mt-2 "
+                onClick={handleLogin}
+              >
+                Sign up
+              </span>{' '}
+              to access 50+ curated levels that gradually take you from
+              “Beginner” to “Intermediate” (for free!)
             </p>
           </div>
           <Button>Intermediate</Button>
