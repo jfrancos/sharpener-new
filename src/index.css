@@ -5,6 +5,7 @@
 html,
 body,
 #root {
+  display: block;
   height: 100%;
 }
 
@@ -13,7 +14,6 @@ body,
   grid-column-start: 1;
 }
 
-div {
+#root div {
   display: flex;
 }
-
