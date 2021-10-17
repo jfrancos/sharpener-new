@@ -28,7 +28,9 @@ const Controller = () => {
   const [collection, tasks] = useCollection('documents');
   const [screen, setScreen] = useState(landingScreen);
 
-  return screen === landingScreen && <Landing />;
+
+
+  return screen === landingScreen && <Landing onLogin={() => setScreen(signinScreen)} />;
 };
 
 export default Controller;
