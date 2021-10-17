@@ -3,18 +3,20 @@ import logo from './logo.png';
 
 const Landing = ({ onLogin: handleLogin }) => {
   return (
-    <div className="bg-white  text-gray-900 .block .space-y-12 .flex .flex-col">
+    <div className="bg-white  text-gray-900 .block .space-y-12 .flex .flex-col cursor-default">
       <div className="bg-gray-100 max-w-screen-sm flex-col space-y-12 mx-auto">
         <div className="space-y-6 flex-col">
           <div className="py-6 bg-gray-400 justify-between px-8 items-center">
             <div className="text-xl font-bold">Ear Sharpener</div>
-            <div
-              className="uppercase flex-col bg-gray-50 rounded-lg items-center px-7 py-1.5 font-semibold text-xs tracking-tight"
-              onClick={handleLogin}
-            >
-              <p>Sign up</p>
-              <div className="my-0.5 h-0.5 bg-gray-300 self-stretch" />
-              <div>Log in</div>
+            <div className="group p-3 -m-3">
+              <div
+                className="group-hover:bg-gray-700 group-hover:text-gray-300 uppercase flex-col bg-gray-50 rounded-lg items-center px-7 py-1.5 font-semibold text-xs tracking-tight"
+                onClick={handleLogin}
+              >
+                <p>Sign up</p>
+                <div className="my-0.5 h-0.5 bg-gray-300 self-stretch" />
+                <div>Log in</div>
+              </div>
             </div>
           </div>
 
