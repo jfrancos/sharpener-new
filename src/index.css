@@ -1,6 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+
+  /* #root */
+  
+  div {
+    display: flex;
+  }
+  
+  .grid-overlay {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+  
+}
 
 html,
 body,
@@ -9,11 +23,3 @@ body,
   height: 100%;
 }
 
-.grid-overlay {
-  grid-row-start: 1;
-  grid-column-start: 1;
-}
-
-#root div {
-  display: flex;
-}

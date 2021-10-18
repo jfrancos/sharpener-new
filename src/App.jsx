@@ -1,6 +1,7 @@
-import React from "react";
-import { Auth } from "./Auth";
-import Controller from "./Controller";
+import React, { useState } from 'react';
+// import { Auth } from './Auth';
+import Controller from './Controller';
+import { UserContext } from './lib/UserContext';
 
 // const { MODE } = __SNOWPACK_ENV__;
 
@@ -29,9 +30,9 @@ if (typeof __SNOWPACK_ENV__ === 'undefined' && 'serviceWorker' in navigator) {
 
 function App() {
   return (
-    <Auth>
+    <UserContext.Provider value={useState()}>
       <Controller />
-    </Auth>
+    </UserContext.Provider>
   );
 }
 

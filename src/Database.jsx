@@ -11,18 +11,13 @@ import {
 import idb from 'pouchdb-adapter-idb';
 import { v4 as uuidv4 } from 'uuid';
 import faunadb from 'faunadb';
-import { Magic, RPCError } from 'magic-sdk';
+import { magic, RPCError } from './lib/magic';
 import { UserMetadata } from './Auth';
+import { UserContext } from './lib/UserContext';
 
-const { MAGIC_PUBLISHABLE_KEY } = import.meta.env;
 const q = faunadb.query;
 const fauna = {};
 let dbPromise = null;
-let magic;
-
-if (MAGIC_PUBLISHABLE_KEY) {
-  magic = new Magic(MAGIC_PUBLISHABLE_KEY, { testMode: false });
-}
 
 const getAuth = async () => {
   console.log('getting auth');
@@ -240,7 +235,9 @@ const useCollection = (name) => {
   const [documents, setDocuments] = useState([]);
   const [collection, setCollection] = useState([]);
   const oldUser = useRef(null);
-  const user = useContext(UserMetadata);
+  // const user = useContext(UserMetadata);
+  // const [user, setUser] = useContext(UserContext);
+const user=null
 
   useEffect(() => {
     (async () => {
