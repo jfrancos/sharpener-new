@@ -21,7 +21,7 @@ const Landing = ({ onLogin: handleLogin }) => {
                 )}
               >
                 <p>Log in</p>
-                <div className=" my-0.5 h-0.5 bg-gray-300 self-stretch" />
+                <div className="my-0.5 h-0.5 bg-gray-300 self-stretch" />
                 <div>Sign up</div>
               </div>
             </div>

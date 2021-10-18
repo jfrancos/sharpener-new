@@ -73,6 +73,7 @@ const Suoli = () => {
           <div className="space-y-2 flex-col">
             <p>Enter your email to log in or sign up</p>
             <input
+              type="email"
               autoFocus
               value={email}
               onChange={({ target: { value } }) => setEmail(value)}
@@ -84,8 +85,8 @@ const Suoli = () => {
             <div
               onClick={handleLogin}
               className={clsx(
-                'text-gray-50 font-semibold justify-center items-center py-3 bg-gray-500 rounded-lg hover:bg-gray-700 grid-overlay',
-                (sending || !validEmail) && 'opacity-40',
+                'text-gray-50 font-semibold justify-center items-center py-3 bg-gray-500 rounded-lg  grid-overlay',
+                sending || !validEmail ? 'opacity-40' : 'hover:bg-gray-700',
               )}
             >
               Send magic link
