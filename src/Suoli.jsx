@@ -1,12 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { magic, RPCError } from './lib/magic';
 import { UserContext } from './lib/UserContext';
+import { useKey } from 'rooks';
 import logo from './logo.png';
 
 const Suoli = () => {
   const [user, setUser] = useContext(UserContext);
   const [showMore, setShowMore] = useState(false);
   const [email, setEmail] = useState('');
+
 
   const suffix = showMore ? (
     ", so you don't have to remember another password or rely on a social networking service. To log in or sign up, click the link in the email we send you."
@@ -35,6 +37,9 @@ const Suoli = () => {
       }
     }
   };
+
+  useKey("Enter", handleLogin)
+
 
   const updateUser = async () => {
     try {
