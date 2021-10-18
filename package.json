@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build --polyfill-node && workbox generateSW && netlify dev -d build",
+    "build": "snowpack build --polyfill-node && workbox generateSW",
+    "build-dev": "snowpack build --polyfill-node && workbox generateSW && netlify dev -d build",
     "test": "web-test-runner \"src/**/*.test.jsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "prettier --check \"src/**/*.{js,jsx}\"",

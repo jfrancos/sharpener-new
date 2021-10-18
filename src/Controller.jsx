@@ -9,7 +9,6 @@ import Etc from './Etc';
 import { UserContext } from './lib/UserContext';
 import { magic, RPCError } from './lib/magic.js';
 
-
 const [
   listScreen,
   adjustScreen,
@@ -48,6 +47,11 @@ const Controller = () => {
     await updateUser();
   }, []);
 
+  const handleSignOut = async () => {
+    await magic.user.logout();
+    await updateUser();
+  };
+
   const updateUser = async () => {
     try {
       setUser((user) => ({ ...user, loading: true }));
@@ -64,7 +68,6 @@ const Controller = () => {
       setUser(null);
     } finally {
       setUser((user) => ({ ...user, loading: false }));
-
     }
   };
 
@@ -74,7 +77,7 @@ const Controller = () => {
         <Landing onLogin={() => setScreen(signinScreen)} />
       )}
       {screen === signinScreen && <Suoli />}
-      {screen === etcScreen && <Etc />}
+      {screen === etcScreen && <Etc onSignout={handleSignOut} />}
     </div>
   );
 };
